@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>2c50bb53-9ffa-4dbb-9c1b-90d0154975c4</UserSecretsId>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <AssemblyName>Query.IntegrationTests</AssemblyName>
+    <RootNamespace>Query.IntegrationTests</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Board\**" />
+    <Compile Remove="Cardformat\**" />
+    <Compile Remove="Haliday\**" />
+    <Content Remove="Board\**" />
+    <Content Remove="Cardformat\**" />
+    <Content Remove="Haliday\**" />
+    <EmbeddedResource Remove="Board\**" />
+    <EmbeddedResource Remove="Cardformat\**" />
+    <EmbeddedResource Remove="Haliday\**" />
+    <None Remove="Board\**" />
+    <None Remove="Cardformat\**" />
+    <None Remove="Haliday\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="5.10.3" />
+    <PackageReference Include="Marten" Version="3.13.4" />
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="5.0.8" />
+    <PackageReference Include="Microsoft.DotNet.InternalAbstractions" Version="1.0.500-preview2-1-003177" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.10.0" />
+    <PackageReference Include="NSubstitute" Version="4.2.2" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="Xunit.Extensions.Ordering" Version="1.4.5" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExchangeRateApisManager\ExchangeRateApisManager.csproj" />
+    <ProjectReference Include="..\ExchangeRateApis\ExchangeRateApis.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Asserts\" />
+  </ItemGroup>
+
+
+</Project>
+
