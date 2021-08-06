@@ -19,7 +19,7 @@ namespace ExchangeRateApisManager.Domains.Currency.Handlers.QueryHandlers
         {
             _URLString = configuration.GetSection("CurrencyApiSettings").GetSection("Url").Value;
             currencies = new List<string>()
-            { "AED","ARS","AUD","BGN","BRL","BSD","CAD","CHF","CLP","EGP","EUR","GBP","JPY","AED","AED" }; 
+            {"USD","AED","ARS","AUD","BGN","BRL","BSD","CAD","CHF","CLP","EGP","EUR","GBP","JPY","AED","AED" }; 
         }
         public Task<double> Handle(GetCurrency request, CancellationToken cancellationToken)
         {
