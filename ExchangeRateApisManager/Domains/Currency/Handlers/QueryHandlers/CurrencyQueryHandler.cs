@@ -25,7 +25,7 @@ namespace ExchangeRateApisManager.Domains.Currency.Handlers.QueryHandlers
         {
             try
             {
-                String URLString = _URLString + request.Data.sourceCurrency;
+                String URLString = _URLString + request.Data.source;
                 using (var webClient = new System.Net.WebClient())
                 {
                     var json = webClient.DownloadString(URLString);
@@ -40,7 +40,7 @@ namespace ExchangeRateApisManager.Domains.Currency.Handlers.QueryHandlers
         }
         private double GetCurrencyRate(GetCurrency request, ExhchangeObject exhchangeObject)
         {
-            return GetRateToSource(request.Data.destinationCurrency, exhchangeObject.conversion_rates) * request.Data.value;
+            return GetRateToSource(request.Data.destination, exhchangeObject.conversion_rates) * request.Data.amount;
         }   
         private double GetRateToSource(string rate, ConversionRate conversion_rates)
         {

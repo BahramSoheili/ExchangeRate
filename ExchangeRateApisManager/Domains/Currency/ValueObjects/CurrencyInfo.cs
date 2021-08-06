@@ -2,8 +2,8 @@
 {
     public class CurrencyInfo
     {
-        public string sourceCurrency { get; set; }
-        public string destinationCurrency { get; set; }
-        public double value { get; set; }
+        public string source { get; set; }
+        public string destination { get; set; }
+        public double amount { get; set; }
     }
 }

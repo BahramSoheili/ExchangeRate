@@ -17,9 +17,9 @@ namespace ExchangeRateTest
         
         public readonly CurrencyInfo Data = new CurrencyInfo()
         {
-            sourceCurrency = "GBP",
-            destinationCurrency = "EUR",
-            value = 20
+            source = "GBP",
+            destination = "EUR",
+            amount = 20
         };
         public HttpResponseMessage CommandResponse;
         public override async Task InitializeAsync()
